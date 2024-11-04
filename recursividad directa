@@ -1,0 +1,25 @@
+package algoritmos.clase4.recursividad;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class Clase4Recursividad {
+
+    public static void main(String[] args) {
+      Mostrar_recursivo(5);
+    }
+//
+    public static void Mostrar_recursivo (int n){
+// Si n es igual a 1, se imprime el mensaje "ejemplo de recursividad" una sola vez y la función termina. Este es el caso base que detiene la recursión.
+        if (n==1){
+            System.out.println("ejemplo de recursividad");}
+        else{
+/**
+ *Si n es mayor que 1, se imprime el mensaje "Ejemplo de recursividad" y luego se
+ *llama al mismo método Mostrar_recursivo con el valor de n reducido en 1. Esto crea una secuencia de llamadas recursivas hasta que se alcanza el caso base 
+ */     
+          System.out.println("Ejemplo de recursividad");
+          Mostrar_recursivo(n-1);}
+}
+}
