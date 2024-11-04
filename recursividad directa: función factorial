@@ -1,0 +1,30 @@
+package algoritmos.funcion;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class Funcion {
+
+    public static void main(String[] args) {
+        System.out.println ("factorial por iteracion:"+ factorial_ite(10));
+        System.out.println ("factorial por recursividad: "+ factorial_rec(10));}
+    
+        public static double factorial_ite(int n) {
+    double fact=1;
+    int i;
+    if (n==0)
+       fact=1;
+      else
+        for (i=1; i<= n; i++)
+           fact=fact*i;
+      return fact;
+   }
+   
+   public static double factorial_rec (int n) {
+   if (n==0)
+       return 1;
+   else 
+       return n* (factorial_rec(n-1));
+   }
+}
