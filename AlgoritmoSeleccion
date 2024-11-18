@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package algoritmos.algoritmoseleccion;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class AlgoritmoSeleccion {
+
+    public static void main(String[] args) {
+        System.out.println("Algoritmo Seleccion");
+        MetodoSeleccion();
+    }
+    private static void MetodoSeleccion (){
+        int [] a= {51,21,39,80,36};
+        System.out.println("Elementos sin ordenar");
+        for (int temp: a) {System.out.println(temp);}
+        int indiceMenor,i,j,n;
+            n = a.length;
+            for ( i = 0; i < n-1; i++) {
+            indiceMenor=i;
+                for (j = i+1; j < n; j++)
+                if (a[j]< a[indiceMenor])
+                indiceMenor=j;
+                  if (i!=indiceMenor) {
+                    int aux=a[i];
+                    a[i]=a[indiceMenor];
+                    a[indiceMenor]=aux;
+                }
+            
+        }
+        System.out.println("Elementos despues de ordenamiento");
+        for(int temp1:a) {System.out.println(temp1);}
+    }
+    
+}
