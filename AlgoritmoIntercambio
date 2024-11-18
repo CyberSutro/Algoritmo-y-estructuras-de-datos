@@ -1,0 +1,30 @@
+/**
+ *
+ * @author AdanSutro
+ */
+package algoritmos.algoritmointercambio;
+public class AlgoritmoIntercambio {
+
+    public static void main(String[] args) {
+        System.out.println("Algoritmo de intercambio ");
+        MetodoIntercambio();
+    }
+    public static void MetodoIntercambio (){
+        int [] a={8,4,6,2};
+        System.out.println("Elementos sin ordenar");
+        for (int temp: a) {System.out.println(temp);}
+        
+        int i, j;
+        for ( i = 0; i < a.length-1; i++) 
+            for (j = i+1 ; j < a.length; j++)
+                if (a[i] > a[j])
+                { int aux= a [i];
+                a[i] = a [j];
+                a[j]= aux;
+                }
+        System.out.println("Elementos despues del ordenamiento");
+        for (int temp1:a){System.out.println(temp1);}
+               
+    } 
+
+}
