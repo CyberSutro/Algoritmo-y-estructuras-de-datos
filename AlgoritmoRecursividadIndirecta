@@ -1,0 +1,27 @@
+package recursividadinderecta;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class RecursividadInderecta {
+    public static void main(String[] args) {
+        //se define un string con 3 letras a,b,c
+        String letras="ABC";
+        //Llamada inicial al metodo recursivo, traspasando parametros
+        CombinarRecursivo ("",letras);
+    }
+    public static void CombinarRecursivo(String prefijo,String str){
+        //obtencion del largo del string
+        int n = str.length();
+        if (n==0)
+        System.out.println(prefijo);
+        else {
+            for (int i=0;i< n; i++){
+        //llamada al metodo de forma recursiva,realizando la combinatoria de
+        //las letras
+            CombinarRecursivo(prefijo+str.charAt(i),str.substring(0,i)+str.substring(i+1,n));
+            }
+        }
+    } 
+}
