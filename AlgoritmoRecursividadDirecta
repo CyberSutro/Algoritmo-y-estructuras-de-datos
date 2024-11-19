@@ -1,0 +1,28 @@
+package directa;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class RecursivdadDirecta {
+    public static void main (String []args){
+    //variable con caracteres a invertir 
+    String palabra ="recursivo";
+    //invocar metodo recursivo 
+    System.out.println(InvertirPalabra_rec(palabra, palabra.length()-1));
+    }
+    //metodo recursivo 
+    private static String InvertirPalabra_rec(String palabra, int longitud ){
+    
+        if (longitud==0) {
+            return palabra.charAt(longitud)+ "";
+        }else{
+        //el metodo "InvertirPalabr_rec" se llaman sobre si mismo
+        //"InvertirPalabra_rec"
+            return palabra.charAt(longitud)+
+                    (InvertirPalabra_rec(palabra, longitud-1));
+        }
+    
+    }
+    
+}
