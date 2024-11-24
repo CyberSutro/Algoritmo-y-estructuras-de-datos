@@ -1,0 +1,65 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package colaboradores;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class ClasePersona {
+// se definen los atributos de la clase persona
+    int codigo;
+    String nombre;
+    String apellido;
+    int edad;
+// constructor de la clase persona
+        public ClasePersona(int codigo, String nombre, String apellido, int edad) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = edad;
+        }
+//Accesadores de la clase
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+//mutadores de la clase 
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
+    public void setNombre(String nombre) {
+       this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+//metodo customer para imprimir atributos 
+public void mostrarPersona(){
+        System.out.println("codigo persona :" + this.codigo);
+        System.out.println("Nombre persona :" + this.nombre);
+        System.out.println("Apellido persona " + this.apellido);
+        System.out.println("Edad persona " + this.edad);
+        System.out.println("-----------------------------");
+}    
+}
