@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package colaboradores;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class Colaboradores {
+    
+    public static void main(String[] args) {
+// creacion de objetos de tipo persona
+    ClasePersona per_1 =new ClasePersona (90,"Andres","Lopez",50);
+    ClasePersona per_2 =new ClasePersona (20,"Pedro","Rojas",25);
+    ClasePersona per_3 =new ClasePersona (10,"Carolina","Zuñiga",38);
+    ClasePersona per_4 =new ClasePersona (50,"Fernanda","Perez",60);
+    ClasePersona per_5 =new ClasePersona (80,"Julio","Andrade",42);
+//almacenamiento de objetos en arreglos
+    ClasePersona [] a = new ClasePersona [] {per_1,per_2,per_3,per_4,per_5};
+//arreglo sin ordenar
+        System.out.println("Elementos sin ordenar");
+        for (ClasePersona tempClasePersona: a) {
+            tempClasePersona.mostrarPersona();
+        }
+        
+//se invoca al metodo ordenamiento
+    MetodoIntercambio(a);
+//arreglo con ordenamiento
+        System.out.println("----------------------");
+        System.out.println("Elementos despues de ordenamiento");
+        for(ClasePersona tempPersona:a){
+            tempPersona.mostrarPersona();}
+    }
+    public static void MetodoIntercambio (ClasePersona []a){
+    int i,j;
+        for ( i = 0; i < a.length-1; i++) {
+            for (j = i+1 ; j < a.length; j++) 
+            //comparacion de valores por edad
+                if (a[i].edad>a[j].edad)
+                {
+            //utiliza variable aux para almacenar valor de forma temporal y no perder o superponer valores
+                    ClasePersona aux=a[i];
+                    a[i]=a[j];
+                    a[j]=aux;
+                    
+                }
+            
+        }
+    }
+}
