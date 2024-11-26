@@ -1,0 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package algoritmobusquedalineal;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author AdanSutro
+ */
+public class AlgoritmoBusquedaLineal {
+
+    public static void main(String[] args) {
+        int[] valores = {60, 40, 5, 18, 12, 9, 25, 4, -8};
+        System.out.println("Este es un algoritmo de busqueda: \n Elija el valor a buscar en el arreglo: " + Arrays.toString(valores));
+        int valorBuscado= obtenerValorValido();
+        int indice = busquedaLineal(valores, valorBuscado);
+        
+        if (indice != -1) {
+            System.out.println("El valor " + valorBuscado + " se encontro en el indice " + indice);
+        } else {
+            System.out.println("El valor " + valorBuscado + " no se encontro en el arreglo.");
+        }
+    }
+     //Método para obtener un valor entero válido del usuario (permite positivos y negativos)
+    private static int obtenerValorValido() {
+        Scanner scanner = new Scanner(System.in);
+        int valor;
+        while (true) {
+            System.out.print("Ingrese el valor a buscar: ");
+            if (scanner.hasNextInt()) {
+                valor = scanner.nextInt();
+                return valor; // Devolvemos el valor directamente, ya que aceptamos cualquier entero
+            } else {
+                System.out.println("Entrada inválida. Por favor, ingrese un número entero.");
+                scanner.next(); // Limpiar la entrada inválida
+            }
+        }
+    }
+    // Método de búsqueda lineal
+    private static int busquedaLineal(int[] arreglo, int valorBuscado) {
+        for (int i = 0; i < arreglo.length; i++) {
+            if (arreglo[i] == valorBuscado) {
+                return i; // Si encontramos el valor, retornamos su índice
+            }
+        }
+        return -1; // Si no encontramos el valor, retornamos -1
+    }
+}
